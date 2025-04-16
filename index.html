@@ -22,7 +22,23 @@
             line-height: 1.6;
         }
         
-        header, footer {
+        header {
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 1000; 
+            background-color: var(--primary-color); 
+            padding: 15px; 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+            color: var(--white);
+            text-align: center;
+        }
+
+        main {
+            margin-top: 80px; /
+        }
+        
+        footer {
             background-color: var(--primary-color);
             color: var(--white);
             text-align: center;
