@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тайм-менеджмент | Главная</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; 
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; 
+            text-align: center; 
+            min-width: 140px; 
+        }
+        
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+        }
+        
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color), #8A6D9E);
+            color: var(--white);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-weight: 700;
+        }
+        
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .card {
+            flex: 1 1 300px;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-title {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .method-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .method-icon {
+            font-size: 40px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+            
+            .header-buttons {
+                right: 10px;
+            }
+            
+            .hero {
+                padding: 30px 15px;
+            }
+            
+            .card {
+                flex: 1 1 100%;
+            }
+            
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Тайм-менеджмент</h1>
+        <div class="header-buttons">
+            <a href="index.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="index.html" style="background-color: bisque">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h2>Управляйте своим временем эффективно</h2>
+                <p>Откройте для себя лучшие методы тайм-менеджмента, которые помогут вам достигать большего за меньшее время</p>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Что такое тайм-менеджмент?</h2>
+                <p>Тайм-менеджмент — это процесс осознанного контроля над количеством времени, затрачиваемым на конкретные виды деятельности, с целью повышения эффективности, продуктивности и качества жизни.</p>
+                
+                <div class="highlight">
+                    <p>Хороший тайм-менеджмент позволяет вам работать умнее, а не усерднее — так, чтобы вы успевали больше за меньшее время, даже когда время ограничено, а давление велико.</p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Ключевые преимущества</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <h3 class="card-title">Повышение продуктивности</h3>
+                        <p>Вы сможете выполнять больше задач за меньшее время, правильно расставляя приоритеты и фокусируясь на важном.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Снижение стресса</h3>
+                        <p>Планирование и контроль над временем уменьшают тревожность и чувство перегруженности.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Лучший баланс</h3>
+                        <p>Вы сможете находить время не только для работы, но и для личной жизни, хобби и отдыха.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Популярные методы</h2>
+                <div class="method-grid">
+                    <div class="method-card">
+                        <div class="method-icon">🍅</div>
+                        <h3>Метод Помидора</h3>
+                        <p>Работайте сфокусированными интервалами по 25 минут с короткими перерывами для поддержания концентрации.</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-icon">🐸</div>
+                        <h3>Метод "Лягушки"</h3>
+                        <p>Выполняйте самые неприятные задачи первыми, чтобы освободиться от стресса.</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-icon">📝</div>
+                        <h3>Метод Айви Ли</h3>
+                        <p>Фокусируйтесь на 6 самых важных задачах дня, выполняемых в порядке приоритета.</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-icon">📊</div>
+                        <h3>Правило 80/20</h3>
+                        <p>Концентрируйтесь на 20% действий, которые приносят 80% результатов.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Как начать?</h2>
+                <ol>
+                    <li><strong>Анализ текущего использования времени</strong> - отслеживайте, куда уходят ваши часы</li>
+                    <li><strong>Постановка целей</strong> - определите, чего вы хотите достичь</li>
+                    <li><strong>Расстановка приоритетов</strong> - выделите самые важные задачи</li>
+                    <li><strong>Планирование</strong> - создайте реалистичный график</li>
+                    <li><strong>Использование инструментов</strong> - выберите подходящие приложения или бумажные системы</li>
+                    <li><strong>Регулярный пересмотр</strong> - анализируйте и корректируйте подход</li>
+                </ol>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>
