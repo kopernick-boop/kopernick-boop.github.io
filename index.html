@@ -175,20 +175,26 @@
         }
         
         @media (max-width: 768px) {
+            header {
+                padding: 15px; /* Уменьшаем отступы в шапке */
+            }
+            h1 {
+                font-size: 24px; /* Уменьшаем размер заголовка */
+            }
+            .header-buttons {
+                position: static; /* Убираем абсолютное позиционирование */
+                display: flex;
+                justify-content: space-between; /* Распределяем кнопки по ширине */
+                margin-top: 10px; /* Добавляем отступ сверху */
+            }
             .dropbtn, .home-btn {
-                background-color: var(--secondary-color);
-                color: var(--white);
-                padding: 6px 14px; 
-                font-size: 10px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: all 0.3s;
-                text-decoration: none;
-                display: inline-block;
-                white-space: nowrap; 
-                text-align: center; 
-                min-width: 70px; 
+                font-size: 14px; /* Уменьшаем размер текста на кнопках */
+                padding: 10px 15px; /* Уменьшаем внутренние отступы */
+                min-width: 120px; /* Уменьшаем минимальную ширину кнопок */
+            }
+            .dropdown-content {
+                min-width: 100%; /* Вытягиваем выпадающее меню на всю ширину */
+                right: auto; /* Центрируем выпадающее меню */
             }
 
             .dropdown-content a {
