@@ -181,35 +181,37 @@
             h1 {
                 font-size: 24px; /* Уменьшаем размер заголовка */
             }
-            .header-buttons {
-                position: static; /* Убираем абсолютное позиционирование */
-                display: flex;
-                justify-content: space-between; /* Распределяем кнопки по ширине */
-                margin-top: 10px; /* Добавляем отступ сверху */
-            }
-            .dropbtn, .home-btn {
-                font-size: 14px; /* Уменьшаем размер текста на кнопках */
-                padding: 10px 15px; /* Уменьшаем внутренние отступы */
-                min-width: 120px; /* Уменьшаем минимальную ширину кнопок */
-            }
             .dropdown {
                 position: static; /* Убираем абсолютное позиционирование */
+                display: flex;
+                flex-direction: column; /* Кнопки располагаются вертикально */
+                align-items: flex-start; /* Выравниваем по левому краю */
                 margin-top: 10px; /* Добавляем отступ сверху */
             }
-        
+
             .dropdown-content {
                 position: static; /* Меняем на статическое позиционирование */
-                min-width: 100%; /* Меню занимает всю ширину экрана */
+                min-width: 100%; /* Занимает всю ширину экрана */
                 box-shadow: none; /* Убираем тень для мобильных */
                 border-radius: 0; /* Убираем скругление углов */
             }
 
             .dropdown-content a {
-                font-size: 13px;
-                padding: 8px 12px;
+                font-size: 14px; /* Уменьшаем размер текста */
+                padding: 10px 15px; /* Уменьшаем внутренние отступы */
+                text-align: left; /* Выравниваем текст по левому краю */
             }
-            
+
+            .dropbtn {
+                font-size: 14px; /* Уменьшаем размер текста на кнопке */
+                padding: 10px 15px; /* Уменьшаем внутренние отступы */
+                min-width: 100%; /* Кнопка занимает всю доступную ширину */
+                text-align: left; /* Выравниваем текст по левому краю */
+            }
+
             .header-buttons {
+                flex-direction: column; /* Кнопки располагаются вертикально */
+                align-items: flex-start; /* Выравниваем по левому краю */
                 right: 10px;
             }
             
