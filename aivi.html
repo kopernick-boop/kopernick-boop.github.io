@@ -126,13 +126,59 @@
             line-height: 1.8;
         }
         @media (max-width: 768px) {
+            header {
+                position: relative; /* Убедитесь, что шапка имеет относительное позиционирование */
+                padding: 15px; /* Уменьшаем отступы в шапке */
+                text-align: center; /* Центрируем содержимое */
+            }
+        
+            h1 {
+                font-size: 24px; /* Уменьшаем размер заголовка */
+                margin: 0; /* Убираем внешние отступы у заголовка */
+                order: 1; /* Заголовок располагается первым */
+            }
+        
+            .header-buttons {
+                position: static; /* Убираем абсолютное позиционирование */
+                display: flex;
+                flex-direction: column; /* Кнопки располагаются вертикально */
+                align-items: center; /* Центрируем кнопки */
+                gap: 10px; /* Добавляем отступ между кнопками */
+                margin-top: 10px; /* Добавляем отступ сверху */
+                order: 2; /* Кнопки располагаются после заголовка */
+            }
+        
+            .home-btn, .dropbtn {
+                font-size: 14px; /* Уменьшаем размер текста на кнопках */
+                padding: 10px 15px; /* Уменьшаем внутренние отступы */
+                min-width: 120px; /* Уменьшаем минимальную ширину кнопок */
+                max-width: 100%; /* Ограничиваем максимальную ширину */
+            }
+        
+            .dropdown-content {
+                position: static; /* Меняем на статическое позиционирование */
+                min-width: 100%; /* Занимает всю ширину экрана */
+                box-shadow: none; /* Убираем тень для мобильных */
+                border-radius: 0; /* Убираем скругление углов */
+            }
+        
             .dropdown-content a {
-                font-size: 13px;
-                padding: 8px 12px;
+                font-size: 14px; /* Уменьшаем размер текста */
+                padding: 10px 15px; /* Уменьшаем внутренние отступы */
+                text-align: left; /* Выравниваем текст по левому краю */
+                white-space: normal; /* Разрешаем перенос текста */
             }
             
-            .header-buttons {
-                right: 10px;
+            .hero {
+                padding: 30px 15px;
+            }
+            
+            .card {
+                flex: 1 1 100%;
+            }
+            
+            .method-grid {
+                grid-template-columns: 1fr;
             }
             .container {
                 padding: 15px;
