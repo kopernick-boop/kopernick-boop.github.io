@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автоматизация задач</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; 
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; 
+            text-align: center; 
+            min-width: 140px; 
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #E9F5DB;
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: #F77F00;
+            color: white;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #6D597A;
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .method-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .method-img img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #F77F00;
+            margin: 20px 0;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .tool-card {
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .tool-card h3 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+            .dropdown {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Автоматизация рутинных задач</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html" style="background-color: bisque">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="method-img">
+                <img src="https://img.icons8.com/color/96/000000/automatic.png" alt="Автоматизация">
+            </div>
+            
+            <p>Автоматизация рутинных задач — это процесс использования технологий и систем для выполнения повторяющихся действий без постоянного участия человека. Позволяет экономить до 5-10 часов в неделю.</p>
+            
+            <h2>Основные методы автоматизации</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Чек-листы</h3>
+                    <p>Готовые последовательности действий для повторяющихся процессов</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Шаблоны</h3>
+                    <p>Заранее подготовленные документы, письма, сообщения</p>
+                </div>
+                <div class="tool-card">
+                    <h3>IFTTT/Zapier</h3>
+                    <p>Сервисы для автоматизации взаимодействия между приложениями</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Макросы</h3>
+                    <p>Записанные последовательности действий в программах</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Боты</h3>
+                    <p>Программы, выполняющие задачи по заданным алгоритмам</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Планировщики</h3>
+                    <p>Автоматическое выполнение задач по расписанию</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <p>Правило автоматизации: Если задача повторяется более 3 раз — стоит задуматься о её автоматизации.</p>
+            </div>
+            
+            <h2>Как внедрить автоматизацию</h2>
+            <ol>
+                <li><strong>Выявите рутину</strong>
+                    <p>Зафиксируйте повторяющиеся задачи, отнимающие время.</p>
+                </li>
+                <li><strong>Оцените потенциал</strong>
+                    <p>Какие задачи можно автоматизировать полностью или частично?</p>
+                </li>
+                <li><strong>Выберите инструменты</strong>
+                    <p>Подберите подходящие сервисы и технологии.</p>
+                </li>
+                <li><strong>Настройте систему</strong>
+                    <p>Создайте шаблоны, чек-листы, настройте автоматизацию.</p>
+                </li>
+                <li><strong>Оптимизируйте</strong>
+                    <p>Постоянно улучшайте автоматизированные процессы.</p>
+                </li>
+            </ol>
+            
+            <h2>Примеры автоматизации</h2>
+            <ul>
+                <li><strong>Для email</strong>: Шаблоны ответов, фильтры, автоматические правила</li>
+                <li><strong>Для документов</strong>: Готовые шаблоны отчётов, макросы в Excel</li>
+                <li><strong>Для соцсетей</strong>: Планировщики публикаций, автоматические ответы</li>
+                <li><strong>Для дома</strong>: Автоплатежи, умные устройства, списки покупок</li>
+                <li><strong>Для бизнеса</strong>: CRM-системы, автоматические напоминания клиентам</li>
+            </ul>
+            
+            <h2>Популярные инструменты</h2>
+            <ul>
+                <li><strong>IFTTT</strong> — автоматизация между 600+ сервисами</li>
+                <li><strong>Zapier</strong> — интеграция бизнес-приложений</li>
+                <li><strong>Microsoft Power Automate</strong> — автоматизация рабочих процессов</li>
+                <li><strong>TextExpander</strong> — шаблоны текстов</li>
+                <li><strong>Todoist</strong> — повторяющиеся задачи</li>
+                <li><strong>Buffer/Hootsuite</strong> — планирование постов</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>Совет: Начните с автоматизации 1-2 самых надоедливых рутинных задач — это даст быстрый результат и мотивацию продолжать.</p>
+            </div>
+            
+            <h2>Ошибки при автоматизации</h2>
+            <ul>
+                <li><strong>Автоматизация ради автоматизации</strong> — без реальной пользы</li>
+                <li><strong>Слишком сложные системы</strong> — которые трудно поддерживать</li>
+                <li><strong>Игнорирование обновлений</strong> — устаревшие автоматизации</li>
+                <li><strong>Отсутствие контроля</strong> — не проверяете результаты</li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

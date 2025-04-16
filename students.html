@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для студентов | Тайм-менеджмент</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+            text-align: center;
+            min-width: 140px;
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .header-buttons {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Тайм-менеджмент для студентов</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html" style="background-color: bisque">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <p>Управление временем особенно важно для студентов, которые сталкиваются с множеством задач: от учебы до личных дел. Вот несколько советов по тайм-менеджменту, которые помогут вам эффективно справляться с нагрузкой.</p>
+
+            <h2>Основные принципы тайм-менеджмента для студентов</h2>
+            <ul>
+                <li><strong>Постановка целей:</strong> Определите свои приоритеты на учебный семестр или год.</li>
+                <li><strong>Планирование:</strong> Используйте календарь или планировщик для распределения времени.</li>
+                <li><strong>Разделение задач:</strong> Разбивайте большие задачи на мелкие и выполнимые части.</li>
+                <li><strong>Гибкость:</strong> Будьте готовы адаптироваться к изменениям в расписании или планах.</li>
+            </ul>
+
+            <h2>Пример декомпозиции задач для студента</h2>
+            <div class="highlight">
+                <p>Например, подготовка к экзамену может быть разбита на такие шаги:</p>
+                <ul>
+                    <li>Чтение лекций</li>
+                    <li>Изучение дополнительных материалов</li>
+                    <li>Составление конспекта</li>
+                    <li>Тестирование знаний</li>
+                    <li>Повторение материала</li>
+                </ul>
+            </div>
+
+            <h2>Преимущества эффективного тайм-менеджмента</h2>
+            <ul>
+                <li><strong>Убирает паралич действий:</strong> Большие задачи больше не пугают.</li>
+                <li><strong>Обеспечивает прогресс:</strong> Маленькие шаги приводят к большим результатам.</li>
+                <li><strong>Повышает мотивацию:</strong> Чувство достижения после каждого шага.</li>
+                <li><strong>Снижает стресс:</strong> Нужно думать только о текущем шаге.</li>
+                <li><strong>Улучшает успеваемость:</strong> У вас будет больше времени для качественной подготовки.</li>
+            </ul>
+
+            <h2>Советы для студентов</h2>
+            <ul>
+                <li>Используйте метод "Помидора" для сосредоточенной работы.</li>
+                <li>Выделяйте время для отдыха, чтобы избежать выгорания.</li>
+                <li>Практикуйте правило 80/20 для определения ключевых задач.</li>
+                <li>Не забывайте про баланс между учебой и личной жизнью.</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

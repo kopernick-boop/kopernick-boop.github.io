@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Препятствия в тайм-менеджменте</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; /* Установлен одинаковый padding */
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; /* Предотвращает перенос текста на новую строку */
+            text-align: center; /* Выравнивание текста по центру */
+            min-width: 140px; /* Минимальная ширина для обеих кнопок */
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .intro-section {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .obstacles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .obstacle-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border-left: 5px solid var(--secondary-color);
+        }
+        .obstacle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        .obstacle-title {
+            color: var(--primary-color);
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .obstacle-content ul {
+            padding-left: 20px;
+        }
+        .obstacle-content li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+        .obstacle-content li:before {
+            content: "•";
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .solution-section {
+            background-color: var(--highlight-color);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 50px 0;
+            border-left: 5px solid var(--primary-color);
+        }
+        .solution-title {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-top: 0;
+        }
+        .solution-content {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+        .obstacle-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .obstacle-image img {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            .header-buttons {
+                right: 10px;
+            }
+            .obstacles-grid {
+                grid-template-columns: 1fr;
+            }
+            .intro-section, .obstacle-card {
+                padding: 20px;
+            }
+            .obstacle-image img {
+                max-width: 100%;
+            }
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Препятствия в тайм-менеджменте</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html" style="background-color: bisque">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="intro-section">
+                <p>Эффективному применению тайм-менеджмента могут препятствовать различные факторы. Осознание этих препятствий — первый шаг к их преодолению и повышению личной продуктивности.</p>
+            </section>
+            <div class="obstacles-grid">
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">1. Отвлекающие факторы</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Постоянные уведомления на телефоне или компьютере</li>
+                            <li>Шумная обстановка или разговоры окружающих</li>
+                            <li>Социальные сети и интернет-серфинг</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">2. Неорганизованное рабочее пространство</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Беспорядок на столе или в рабочей зоне</li>
+                            <li>Недостаток удобного места для работы</li>
+                            <li>Отсутствие необходимых инструментов под рукой</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">3. Неясные цели и приоритеты</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Отсутствие четких целей и задач</li>
+                            <li>Неправильная расстановка приоритетов</li>
+                            <li>Концентрация на неважных задачах</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">4. Перфекционизм</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Стремление к идеальному результату</li>
+                            <li>Боязнь совершить ошибку</li>
+                            <li>Затягивание завершения проектов</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">5. Нереалистичные ожидания</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Переоценка своих возможностей</li>
+                            <li>Недооценка времени на выполнение задач</li>
+                            <li>Стресс из-за невыполненных планов</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">6. Многозадачность</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Попытки делать несколько дел одновременно</li>
+                            <li>Снижение качества работы</li>
+                            <li>Увеличение времени выполнения задач</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">7. Отсутствие планирования</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Непривычка планировать заранее</li>
+                            <li>Хаотичное выполнение задач</li>
+                            <li>Потеря времени на неважные дела</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">8. Эмоциональное состояние</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Стресс и тревожность</li>
+                            <li>Негативные эмоции и переживания</li>
+                            <li>Снижение мотивации и концентрации</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">9. Физическое состояние</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Усталость и недостаток сна</li>
+                            <li>Проблемы со здоровьем</li>
+                            <li>Низкий уровень энергии</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">10. Недостаток навыков</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Незнание методов тайм-менеджмента</li>
+                            <li>Неумение применять техники на практике</li>
+                            <li>Отсутствие системы организации времени</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">11. Прокрастинация</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Постоянное откладывание задач</li>
+                            <li>Поиск оправданий для отсрочки</li>
+                            <li>Проблемы с самодисциплиной</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="obstacle-card">
+                    <h3 class="obstacle-title">12. Перегрузка задачами</h3>
+                    <div class="obstacle-content">
+                        <ul>
+                            <li>Слишком много задач в списке</li>
+                            <li>Чувство перегруженности</li>
+                            <li>Снижение мотивации</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="obstacle-image">
+                <img src="kartinki/greyshark.jpg" alt="Препятствия в тайм-менеджменте">
+            </div>
+            <section class="solution-section">
+                <h3 class="solution-title">Как преодолеть эти препятствия?</h3>
+                <div class="solution-content">
+                    <p>Для успешного применения тайм-менеджмента важно осознавать эти препятствия и систематически работать над их устранением. Это включает в себя:</p>
+                    <ul>
+                        <li>Улучшение организационных навыков и создание комфортной рабочей среды</li>
+                        <li>Установление четких целей и реалистичных приоритетов</li>
+                        <li>Развитие полезных привычек и техник концентрации</li>
+                        <li>Регулярный анализ и корректировку своего подхода</li>
+                        <li>Заботу о физическом и эмоциональном состоянии</li>
+                    </ul>
+                    <p>Помните, что совершенствование навыков управления временем — это постепенный процесс, требующий практики и терпения.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

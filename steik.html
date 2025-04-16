@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бифштекс-метод</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; 
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; 
+            text-align: center; 
+            min-width: 140px; 
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #E9F5DB;
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: #F77F00;
+            color: white;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #6D597A;
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .method-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .method-img img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #F77F00;
+            margin: 20px 0;
+        }
+        .meal-plan {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .meal-column {
+            width: 45%;
+            min-width: 250px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .meal-column h3 {
+            text-align: center;
+            color: var(--primary-color);
+        }
+        .analogy {
+            background-color: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #6D597A;
+        }
+        @media (max-width: 768px) {
+            .dropdown {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .meal-column {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Бифштекс-метод</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html" style="background-color: bisque">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="method-img">
+                <img src="https://img.icons8.com/color/96/000000/steak.png" alt="Бифштекс-метод">
+            </div>
+            
+            <p>Бифштекс-метод — это оригинальный подход к тайм-менеджменту, который предлагает разделять рабочий день на "основное блюдо" (важные задачи) и "гарнир" (второстепенные дела). Метод помогает сосредоточиться на главном, не перегружая себя второстепенными задачами.</p>
+            
+            <div class="analogy">
+                <h3>Почему "Бифштекс"?</h3>
+                <p>По аналогии с обедом: бифштекс — это главное, сытное и питательное блюдо (важные задачи), а гарнир — дополнение, которое делает трапезу приятнее, но не является основным источником энергии (второстепенные дела).</p>
+            </div>
+            
+            <h2>Как работает Бифштекс-метод?</h2>
+            <ul>
+                <li><strong>"Бифштекс"</strong> — 3-4 важные задачи, которые приближают вас к цели (60-70% времени)</li>
+                <li><strong>"Гарнир"</strong> — 5-7 мелких дел, которые нужно сделать, но они не критичны (30-40% времени)</li>
+                <li><strong>"Соус"</strong> — неожиданные задачи, которые появляются в течение дня (не более 10% времени)</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>Главный принцип: сначала "бифштекс" — важные задачи, затем "гарнир" — всё остальное. Не позволяйте гарниру вытеснить основное блюдо!</p>
+            </div>
+            
+            <h2>Как применять метод</h2>
+            <ol>
+                <li><strong>Определите свои "бифштексы"</strong>
+                    <p>Выберите 3-4 задачи, которые действительно важны для ваших целей. Это должны быть "съедающие" большую часть вашей энергии.</p>
+                </li>
+                <li><strong>Составьте список "гарнира"</strong>
+                    <p>Запишите мелкие дела, которые можно сделать между основными задачами или когда нет сил для сложной работы.</p>
+                </li>
+                <li><strong>Распределите время</strong>
+                    <p>Выделите утренние часы (когда вы наиболее продуктивны) для "бифштексов", а послеобеденное время — для "гарнира".</p>
+                </li>
+                <li><strong>Готовьтесь к "соусу"</strong>
+                    <p>Оставьте 10% времени на непредвиденные задачи, но не позволяйте им нарушить ваш план.</p>
+                </li>
+                <li><strong>Анализируйте "вкус"</strong>
+                    <p>В конце дня оцените, удалось ли вам "съесть" все запланированные "бифштексы".</p>
+                </li>
+            </ol>
+            
+            <div class="meal-plan">
+                <div class="meal-column">
+                    <h3>Бифштекс (основное)</h3>
+                    <ul>
+                        <li>Работа над ключевым проектом</li>
+                        <li>Важные переговоры</li>
+                        <li>Стратегическое планирование</li>
+                        <li>Обучение новому навыку</li>
+                    </ul>
+                </div>
+                <div class="meal-column">
+                    <h3>Гарнир (дополнение)</h3>
+                    <ul>
+                        <li>Ответы на письма</li>
+                        <li>Короткие совещания</li>
+                        <li>Рутинные задачи</li>
+                        <li>Административные вопросы</li>
+                        <li>Просмотр отчетов</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2>Преимущества метода</h2>
+            <ul>
+                <li><strong>Фокус на главном</strong> — важные задачи не теряются среди второстепенных</li>
+                <li><strong>Реалистичность</strong> — учитываются все типы задач</li>
+                <li><strong>Гибкость</strong> — можно адаптировать под любой график</li>
+                <li><strong>Наглядность</strong> — чёткое разделение приоритетов</li>
+                <li><strong>Баланс</strong> — не перегружает день</li>
+            </ul>
+            
+            <h2>Примеры использования</h2>
+            <ul>
+                <li><strong>Для руководителей</strong>: "Бифштекс" — стратегия, "гарнир" — оперативка</li>
+                <li><strong>Для фрилансеров</strong>: "Бифштекс" — проекты клиентов, "гарнир" — админ. задачи</li>
+                <li><strong>Для студентов</strong>: "Бифштекс" — учёба, "гарнир" — бытовые дела</li>
+                <li><strong>Для родителей</strong>: "Бифштекс" — время с детьми, "гарнир" — домашние хлопоты</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>Совет: Если "бифштекс" слишком большой, "нарежьте" его на порционные куски — разбейте задачу на этапы.</p>
+            </div>
+            
+            <h2>Частые ошибки</h2>
+            <ul>
+                <li><strong>Слишком много "бифштексов"</strong> — 3-4 достаточно, иначе перегруз</li>
+                <li><strong>Путаница в приоритетах</strong> — второстепенное не должно становиться основным</li>
+                <li><strong>Игнорирование "гарнира"</strong> — мелкие задачи могут накапливаться</li>
+                <li><strong>Неучёт "соуса"</strong> — всегда оставляйте резерв времени</li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Примеры тайм-менеджмента | Истории успеха</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; /* Установлен одинаковый padding */
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; /* Предотвращает перенос текста на новую строку */
+            text-align: center; /* Выравнивание текста по центру */
+            min-width: 140px; /* Минимальная ширина для обеих кнопок */
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .intro-text {
+            text-align: center;
+            font-size: 18px;
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+        }
+        .example-section {
+            margin: 50px 0;
+        }
+        .example-card {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin: 30px 0;
+            padding: 30px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .example-card:hover {
+            transform: translateY(-5px);
+        }
+        .example-card.reverse {
+            flex-direction: row-reverse;
+        }
+        .example-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .example-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .example-content {
+            flex: 2;
+        }
+        .example-title {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 24px;
+        }
+        .example-description {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        .trakimus-card {
+            background: linear-gradient(135deg, var(--primary-color), #8A6D9E);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 50px 0;
+        }
+        .trakimus-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .trakimus-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .trakimus-link:hover {
+            background-color: #3e8e41;
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .header-buttons {
+                right: 10px;
+            }
+            .example-card, .example-card.reverse {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .example-image {
+                min-width: 100%;
+                margin-bottom: 20px;
+            }
+            .intro-text {
+                padding: 15px;
+            }
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Примеры успешного тайм-менеджмента</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html" style="background-color: bisque">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="intro-text">
+                <p>Вот несколько вдохновляющих историй применения тайм-менеджмента, которые иллюстрируют, как эффективное управление временем может привести к выдающимся достижениям:</p>
+            </div>
+            
+            <section class="example-section">
+                <div class="example-card">
+                    <div class="example-image">
+                        <img src="kartinki/img5.jpg" alt="Томас Эдисон">
+                    </div>
+                    <div class="example-content">
+                        <h3 class="example-title">1. Томас Эдисон</h3>
+                        <p class="example-description">
+                            Томас Эдисон был мастером продуктивности. Он использовал метод планирования своих дней, записывая задачи и устанавливая четкие приоритеты. 
+                            Эдисон также практиковал технику, похожую на современный "метод помидора", работая сфокусированными блоками по 90 минут с короткими перерывами. 
+                            Его подход к управлению временем помог ему создать более 1000 изобретений.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="example-card reverse">
+                    <div class="example-image">
+                        <img src="kartinki/img6.jpg" alt="Джон Рокфеллер">
+                    </div>
+                    <div class="example-content">
+                        <h3 class="example-title">2. Джон Рокфеллер</h3>
+                        <p class="example-description">
+                            Джон Рокфеллер, первый в мире долларовый миллиардер, уделял особое внимание планированию времени. 
+                            Он использовал подробные списки задач и строго придерживался расписания. 
+                            Рокфеллер выделял специальное время для стратегического планирования и размышлений, считая это важнейшей частью своего успеха. 
+                            Его дисциплинированный подход к времени стал образцом для многих предпринимателей.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-image">
+                        <img src="kartinki/img7.jpg" alt="Илон Маск">
+                    </div>
+                    <div class="example-content">
+                        <h3 class="example-title">3. Илон Маск</h3>
+                        <p class="example-description">
+                            Илон Маск известен своей экстремальной продуктивностью. Он использует технику "блокировки времени", 
+                            разбивая свой день на 5-минутные интервалы для выполнения различных задач. 
+                            Маск работает по 80-100 часов в неделю, распределяя время между несколькими компаниями. 
+                            Его секрет - жесткий приоритизация и делегирование всего, что не требует его личного внимания.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="example-card reverse">
+                    <div class="example-image">
+                        <img src="kartinki/img8.jpg" alt="Ричард Брэнсон">
+                    </div>
+                    <div class="example-content">
+                        <h3 class="example-title">4. Ричард Брэнсон</h3>
+                        <p class="example-description">
+                            Ричард Брэнсон, основатель Virgin Group, строит свой день вокруг утренних ритуалов. 
+                            Он начинает день с физических упражнений и медитации, что заряжает его энергией. 
+                            Брэнсон мастерски делегирует задачи, сосредотачиваясь только на стратегических решениях. 
+                            Его подход показывает, как баланс работы и личного времени может привести к успеху в бизнесе.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-image">
+                        <img src="kartinki/img9.jpg" alt="Опра Уинфри">
+                    </div>
+                    <div class="example-content">
+                        <h3 class="example-title">5. Опра Уинфри</h3>
+                        <p class="example-description">
+                            Опра Уинфри планирует свои дни с военной точностью, выделяя время для работы, отдыха и саморазвития. 
+                            Она использует медитацию и ведение дневника для поддержания фокуса. 
+                            Опра научилась говорить "нет" проектам, которые не соответствуют ее приоритетам. 
+                            Ее пример демонстрирует, как тайм-менеджмент помогает сохранять баланс при огромной загруженности.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="example-card reverse">
+                    <div class="example-image">
+                        <img src="kartinki/img10.jpg" alt="Билл Гейтс">
+                    </div>
+                    <div class="example-content">
+                        <h3 class="example-title">6. Билл Гейтс</h3>
+                        <p class="example-description">
+                            Билл Гейтс использует метод "планирования на неделю", выделяя приоритетные задачи. 
+                            Он знаменит своими "неделями размышлений", когда полностью отключается от рутины для стратегического планирования. 
+                            Гейтс тщательно фильтрует информацию, которую потребляет, чтобы не тратить время на несущественное. 
+                            Его подход к управлению временем стал ключом к постоянному обучению и инновациям.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="trakimus-card">
+                    <h3 class="trakimus-title">7. Тракимус Юрий Викторович</h3>
+                    <p>Легендарный создатель алгоритмов оптимизации времени, провидец эффективности и мастер продуктивности. Его инновационные подходы к тайм-менеджменту перевернули представления об организации времени.</p>
+                    <p>"Истинная эффективность - это не делать больше, а делать правильные вещи в правильное время" - Тракимус Ю.В.</p>
+                    <a href="https://onedrive.live.com/?id=F60FECB63B401FD2%21440&cid=F60FECB63B401FD2" class="trakimus-link">Нажми, если ценишь истинный тайм-менеджмент</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

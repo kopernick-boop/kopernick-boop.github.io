@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метод «Антирасписание»</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; 
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; 
+            text-align: center; 
+            min-width: 140px; 
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+            
+            .dropdown {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Метод «Антирасписание»</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html" style="background-color: bisque">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <p>Метод «Антирасписание» — это техника тайм-менеджмента, которая фокусируется на планировании времени для отдыха и развлечений, а также фиксации дедлайнов. Основная идея заключается в том, что планирование времени для отдыха помогает избежать выгорания и повышает продуктивность.</p>
+            
+            <h2>Основные принципы метода «Антирасписание»</h2>
+            <ul>
+                <li><strong>Фиксация отдыха:</strong> Записывайте время, отведенное на отдых, хобби и развлечения.</li>
+                <li><strong>Фиксация дедлайнов:</strong> Указывайте сроки выполнения важных задач.</li>
+                <li><strong>Гибкость:</strong> Работа выполняется между периодами отдыха.</li>
+                <li><strong>Баланс:</strong> Метод помогает поддерживать баланс между работой и личной жизнью.</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>Идея метода заключается в том, что планирование отдыха мотивирует к работе, так как человек знает, что его ждет вознаграждение.</p>
+            </div>
+            
+            <h2>Как применять метод «Антирасписание»</h2>
+            <ol>
+                <li><strong>Планирование отдыха</strong>
+                    <p>Запишите время для занятий спортом, встреч с друзьями или других приятных активностей.</p>
+                </li>
+                <li><strong>Установка дедлайнов</strong>
+                    <p>Отметьте важные сроки выполнения задач, чтобы не пропустить их.</p>
+                </li>
+                <li><strong>Работа между отдыхом</strong>
+                    <p>Выполняйте задачи в оставшееся время, используя отдых как мотивацию.</p>
+                </li>
+                <li><strong>Регулярный анализ</strong>
+                    <p>Оценивайте эффективность метода и корректируйте планы при необходимости.</p>
+                </li>
+            </ol>
+            
+            <h2>Преимущества метода</h2>
+            <ul>
+                <li><strong>Снижение стресса:</strong> Планирование отдыха помогает расслабиться.</li>
+                <li><strong>Повышение мотивации:</strong> Отдых становится наградой за выполненную работу.</li>
+                <li><strong>Улучшение баланса:</strong> Лучше распределяется время между работой и личной жизнью.</li>
+                <li><strong>Гибкость:</strong> Метод легко адаптируется под любые обстоятельства.</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>Совет: Используйте ежедневник или приложение для фиксации времени отдыха и дедлайнов.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

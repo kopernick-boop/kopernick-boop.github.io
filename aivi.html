@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метод Айви Ли</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; 
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; 
+            text-align: center; 
+            min-width: 140px; 
+        }
+        
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #E9F5DB;
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: #F77F00;
+            color: white;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #6D597A;
+            margin-top: 30px;
+            font-size: 28px;
+        }
+        ul, ol {
+            padding-left: 30px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        .method-img {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .method-img img {
+            max-width: 250px;
+            border-radius: 10px;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 25px;
+            border-left: 6px solid #F77F00;
+            margin: 30px 0;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        .steps {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        @media (max-width: 768px) {
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+            
+            .header-buttons {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+                max-width: 95%;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            ul, ol, p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Метод Айви Ли</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html" style="background-color: bisque">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="method-img">
+                <img src="https://img.icons8.com/color/96/000000/task-completed.png" alt="Метод Айви Ли">
+            </div>
+            <p>Метод Айви Ли — это простая, но чрезвычайно эффективная система продуктивности, разработанная для Чарльза Шваба, президента Bethlehem Steel Corporation. Этот метод помог компании увеличить производительность на 250% и до сих пор остается одним из самых действенных инструментов тайм-менеджмента.</p>
+            <h2>Основные принципы метода Айви Ли</h2>
+            <ul>
+                <li><strong>Простота</strong> — всего 5 шагов, не требующих специальных инструментов</li>
+                <li><strong>Приоритезация</strong> — фокус на самых важных задачах</li>
+                <li><strong>Последовательность</strong> — выполнение задач строго по порядку</li>
+                <li><strong>Регулярность</strong> — ежедневное применение метода</li>
+                <li><strong>Ограничение</strong> — не более 6 важных задач в день</li>
+            </ul>
+            <div class="highlight">
+                <p>Метод особенно эффективен потому, что заставляет вас каждый день определять действительно важные задачи и выполнять их в приоритетном порядке. Это создает четкую структуру рабочего дня и помогает избежать хаотичного переключения между задачами.</p>
+            </div>
+            <h2>Как применять метод Айви Ли</h2>
+            <div class="steps">
+                <ol>
+                    <li><strong>Вечерний ритуал</strong>
+                        <p>В конце каждого рабочего дня запишите 6 самых важных дел, которые вам нужно выполнить завтра. Ни больше, ни меньше — именно 6. Это количество специально ограничено, чтобы вы фокусировались на самом важном.</p>
+                    </li>
+                    <li><strong>Расстановка приоритетов</strong>
+                        <p>Пронумеруйте эти задачи в порядке их истинной важности, а не срочности. Задача №1 — самая важная, которая окажет наибольшее влияние на ваши результаты. Будьте честны с собой при расстановке приоритетов.</p>
+                    </li>
+                    <li><strong>Утреннее выполнение</strong>
+                        <p>На следующий день приступайте к первой задаче и работайте над ней, пока не завершите. Не переходите к следующей задаче, пока не закончите текущую. Это развивает дисциплину и концентрацию.</p>
+                    </li>
+                    <li><strong>Последовательность</strong>
+                        <p>Только после полного выполнения первой задачи переходите ко второй, затем к третьей и так далее. Если какая-то задача занимает больше времени, чем ожидалось, продолжайте работать над ней, пока не завершите.</p>
+                    </li>
+                    <li><strong>Перенос невыполненного</strong>
+                        <p>Если вы не выполнили все задачи, перенесите оставшиеся в список на следующий день, снова расставив приоритеты. Не ругайте себя — лучше проанализируйте, почему задачи не были выполнены.</p>
+                    </li>
+                </ol>
+            </div>
+            <h2>Почему именно 6 задач?</h2>
+            <ul>
+                <li>Это оптимальное количество, которое большинство людей может реально выполнить за один рабочий день без перегрузки</li>
+                <li>Ограничение заставляет вас тщательнее выбирать задачи и фокусироваться на действительно важном</li>
+                <li>Позволяет сосредоточиться на качестве выполнения, а не на количестве завершенных задач</li>
+                <li>Предотвращает перегрузку и выгорание, так как список остается реалистичным и выполнимым</li>
+                <li>Создает психологический комфорт — вы знаете, что не пытаетесь объять необъятное</li>
+            </ul>
+            <h2>Пример списка по методу Айви Ли</h2>
+            <div class="highlight">
+                <ol>
+                    <li><strong>Завершить презентацию для клиента A (3 часа)</strong> - критически важно для подписания крупного контракта</li>
+                    <li><strong>Подготовить отчет за квартал (2 часа)</strong> - срок сдачи сегодня, влияет на финансовые показатели</li>
+                    <li><strong>Провести совещание с отделом продаж (1 час)</strong> - обсудить новые маркетинговые стратегии</li>
+                    <li><strong>Ответить на важные письма (30 мин)</strong> - от ключевых партнеров и клиентов</li>
+                    <li><strong>Заключить договор с поставщиком (1 час)</strong> - чтобы обеспечить бесперебойные поставки</li>
+                    <li><strong>Запланировать встречи на следующую неделю (30 мин)</strong> - координация с ассистентом</li>
+                </ol>
+            </div>
+            <h2>Преимущества метода</h2>
+            <ul>
+                <li><strong>Увеличивает продуктивность</strong> — за счет фокуса на самых важных задачах, которые действительно продвигают ваши цели вперед</li>
+                <li><strong>Снижает стресс</strong> — четкий план на день избавляет от тревоги и ощущения перегруженности</li>
+                <li><strong>Развивает дисциплину</strong> — последовательное выполнение задач по приоритету тренирует силу воли</li>
+                <li><strong>Улучшает качество работы</strong> — концентрация на одной задаче позволяет делать ее лучше и быстрее</li>
+                <li><strong>Повышает осознанность</strong> — ежедневный анализ приоритетов помогает лучше понимать свои цели</li>
+                <li><strong>Создает чувство удовлетворения</strong> — завершение задач дает ощущение прогресса и достижений</li>
+            </ul>
+            <h2>Частые ошибки</h2>
+            <ul>
+                <li><strong>Слишком много задач</strong> — строго придерживайтесь правила 6 дел, не пытайтесь включить все</li>
+                <li><strong>Неверные приоритеты</strong> — оценивайте истинную важность задач для ваших целей, а не их срочность</li>
+                <li><strong>Нарушение последовательности</strong> — не переходите к задаче №2, пока не закончите №1, как бы ни хотелось</li>
+                <li><strong>Отсутствие вечернего планирования</strong> — список должен быть готов с вечера, чтобы утром сразу приступить к работе</li>
+                <li><strong>Включение рутинных задач</strong> — метод предназначен для важных стратегических задач, а не для повседневных мелких дел</li>
+                <li><strong>Отсутствие анализа</strong> — регулярно пересматривайте, какие задачи остаются невыполненными и почему</li>
+            </ul>
+            <div class="highlight">
+                <p><strong>Совет:</strong> Используйте обычный бумажный блокнот для ведения списка — это усилит эффект метода и снизит вероятность отвлечений. Физическое вычеркивание выполненных задач создает дополнительное чувство удовлетворения и прогресса. Также попробуйте сочетать метод Айви Ли с другими техниками, например, с методом "Помидора" для выполнения отдельных задач.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

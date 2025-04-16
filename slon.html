@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метод «Съешьте слона»</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+            text-align: center;
+            min-width: 140px;
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .elephant-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .elephant-img img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+        }
+        .steps {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .example {
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .header-buttons {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Метод «Съешьте слона»</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html" style="background-color: bisque">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="elephant-img">
+                <img src="https://img.icons8.com/color/96/000000/elephant.png" alt="Слон">
+            </div>
+            <p>Метод «Съешьте слона» — это эффективный подход к выполнению крупных, сложных задач или проектов, которые кажутся неподъемными на первый взгляд. Метод основан на принципе: «Как съесть слона? По кусочку за раз!»</p>
+            <h2>Основные принципы метода</h2>
+            <ul>
+                <li><strong>Декомпозиция</strong> — разбиение большой задачи на мелкие, выполнимые части</li>
+                <li><strong>Последовательность</strong> — систематическое выполнение шагов один за другим</li>
+                <li><strong>Прогресс</strong> — регулярное движение вперед, даже маленькими шагами</li>
+                <li><strong>Фокус</strong> — концентрация на текущем «кусочке», а не на всем «слоне» сразу</li>
+                <li><strong>Отслеживание</strong> — визуализация прогресса для мотивации</li>
+            </ul>
+            <div class="highlight">
+                <p>Ваш «слон» — это любая большая, сложная задача или цель, которая вызывает у вас чувство перегруженности или страха перед началом.</p>
+            </div>
+            <h2>Как применять метод «Съешьте слона»</h2>
+            <div class="steps">
+                <ol>
+                    <li><strong>Определите своего «слона»</strong>
+                        <p>Четко сформулируйте свою большую цель или задачу. Запишите её в формате SMART (конкретная, измеримая, достижимая, релевантная, ограниченная по времени).</p>
+                    </li>
+                    <li><strong>Разделите на «бифштексы»</strong>
+                        <p>Разбейте большую цель на основные этапы (кварталы, месяцы). Каждый этап должен быть значительным, но выполнимым.</p>
+                    </li>
+                    <li><strong>Нарежьте на «кусочки»</strong>
+                        <p>Каждый этап разделите на конкретные действия, которые можно выполнить за один рабочий сеанс (от 15 минут до 2 часов).</p>
+                    </li>
+                    <li><strong>Составьте план питания</strong>
+                        <p>Распределите «кусочки» по дням/неделям в календаре. Определите, сколько «кусочков» вы сможете «съедать» ежедневно.</p>
+                    </li>
+                    <li><strong>Начните с первого «укуса»</strong>
+                        <p>Выберите самый простой или самый важный первый шаг и выполните его. Важно начать!</p>
+                    </li>
+                    <li><strong>Отслеживайте прогресс</strong>
+                        <p>Отмечайте выполненные шаги. Визуализация прогресса (графики, чек-листы) усиливает мотивацию.</p>
+                    </li>
+                </ol>
+            </div>
+            <h2>Примеры «слонов» и их декомпозиция</h2>
+            <div class="example">
+                <p><strong>Пример 1: Написание дипломной работы</strong></p>
+                <ul>
+                    <li>Выбор темы</li>
+                    <li>Составление плана</li>
+                    <li>Поиск литературы</li>
+                    <li>Написание введения</li>
+                    <li>Раздел 1 (подразделы 1.1, 1.2, 1.3)</li>
+                    <li>Раздел 2 (подразделы 2.1, 2.2)</li>
+                    <li>Заключение</li>
+                    <li>Оформление</li>
+                    <li>Проверка и корректировка</li>
+                </ul>
+                <p><strong>Пример 2: Изучение иностранного языка</strong></p>
+                <ul>
+                    <li>Освоение алфавита и произношения</li>
+                    <li>Базовый словарный запас (500 слов)</li>
+                    <li>Основы грамматики</li>
+                    <li>Простые диалоги</li>
+                    <li>Чтение адаптированной литературы</li>
+                    <li>Просмотр фильмов с субтитрами</li>
+                    <li>Общение с носителями</li>
+                </ul>
+            </div>
+            <h2>Преимущества метода</h2>
+            <ul>
+                <li><strong>Убирает паралич действий</strong> — огромная задача больше не пугает</li>
+                <li><strong>Обеспечивает прогресс</strong> — маленькие шаги приводят к большим результатам</li>
+                <li><strong>Повышает мотивацию</strong> — чувство достижения после каждого шага</li>
+                <li><strong>Снижает стресс</strong> — нужно думать только о текущем «кусочке»</li>
+                <li><strong>Улучшает планирование</strong> — помогает реально оценивать сроки</li>
+                <li><strong>Универсальность</strong> — подходит для любых сфер жизни</li>
+            </ul>
+            <h2>Частые ошибки</h2>
+            <ul>
+                <li><strong>Слишком крупные «кусочки»</strong> — шаги должны быть действительно выполнимыми</li>
+                <li><strong>Отсутствие планирования</strong> — без расписания метод теряет эффективность</li>
+                <li><strong>Неотслеживание прогресса</strong> — важно видеть, сколько уже сделано</li>
+                <li><strong>Попытка «съесть» слишком много сразу</strong> — регулярность важнее скорости</li>
+                <li><strong>Отсутствие гибкости</strong> — план можно корректировать по мере необходимости</li>
+            </ul>
+            <div class="highlight">
+                <p>Совет: Используйте правило «2-х минут» — если следующий «кусочек» можно сделать за 2 минуты, выполните его сразу, не откладывая.</p>
+            </div>
+            <h2>Инструменты для метода</h2>
+            <ul>
+                <li><strong>Trello</strong> или <strong>Notion</strong> — для визуализации этапов</li>
+                <li><strong>Google Календарь</strong> — для планирования «кусочков»</li>
+                <li><strong>Habitica</strong> — для геймификации процесса</li>
+                <li><strong>Физический чек-лист</strong> — для удовлетворения от вычеркивания</li>
+                <li><strong>Диаграмма Ганта</strong> — для сложных многоэтапных проектов</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

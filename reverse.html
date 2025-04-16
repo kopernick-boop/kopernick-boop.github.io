@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Техника «Обратного планирования»</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; 
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; 
+            text-align: center; 
+            min-width: 140px; 
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .reverse-planning-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .reverse-planning-img img {
+            max-width: 250px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 15px;
+            border-left: 6px solid var(--secondary-color);
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .decorative-box {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .dropdown {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Техника «Обратного планирования»</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html" style="background-color: bisque">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="reverse-planning-img">
+                <img src="https://img.icons8.com/color/96/000000/planner.png" alt="Планирование">
+            </div>
+            
+            <p>Техника «Обратного планирования» — это метод, при котором вы начинаете планировать свои задачи с конечной цели или дедлайна и двигаетесь в обратном направлении, разбивая процесс на конкретные шаги. Этот подход помогает избежать прокрастинации и гарантирует выполнение задач в срок.</p>
+            
+            <h2>Основные принципы техники</h2>
+            <ul>
+                <li><strong>Определение дедлайна:</strong> Установите четкую дату завершения проекта или задачи.</li>
+                <li><strong>Разбиение на этапы:</strong> Разделите процесс на подзадачи, начиная с последнего шага.</li>
+                <li><strong>Установка временных рамок:</strong> Назначьте сроки выполнения для каждого этапа.</li>
+                <li><strong>Гибкость:</strong> Корректируйте план по мере необходимости.</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>«Обратное планирование» помогает сосредоточиться на результате и не терять время на бесполезные действия.</p>
+            </div>
+            
+            <h2>Как применять технику «Обратного планирования»</h2>
+            <ol>
+                <li><strong>Определение цели</strong>
+                    <p>Четко определите конечный результат или дедлайн, к которому нужно прийти.</p>
+                </li>
+                <li><strong>Разбиение на этапы</strong>
+                    <p>Начните с последнего шага и двигайтесь назад, выделяя все необходимые подзадачи.</p>
+                </li>
+                <li><strong>Установка сроков</strong>
+                    <p>Назначьте реалистичные сроки для выполнения каждого этапа.</p>
+                </li>
+                <li><strong>Контроль прогресса</strong>
+                    <p>Регулярно проверяйте выполнение этапов и корректируйте план при необходимости.</p>
+                </li>
+                <li><strong>Достижение результата</strong>
+                    <p>Выполняйте задачи по плану, чтобы гарантированно достичь цели в срок.</p>
+                </li>
+            </ol>
+            
+            <div class="decorative-box">
+                <h2>Пример применения техники</h2>
+                <p><strong>Цель:</strong> Завершить презентацию к 15 декабря.</p>
+                <ul>
+                    <li><strong>14 декабря:</strong> Проверка и финальная доработка презентации.</li>
+                    <li><strong>13 декабря:</strong> Добавление анимаций и оформление слайдов.</li>
+                    <li><strong>12 декабря:</strong> Сбор данных и создание контента для слайдов.</li>
+                    <li><strong>11 декабря:</strong> Определение структуры презентации.</li>
+                    <li><strong>10 декабря:</strong> Анализ требований и темы презентации.</li>
+                </ul>
+            </div>
+            
+            <h2>Преимущества техники</h2>
+            <ul>
+                <li><strong>Чёткость:</strong> Ясное понимание, что нужно сделать и когда.</li>
+                <li><strong>Повышение продуктивности:</strong> Фокус на важных этапах.</li>
+                <li><strong>Снижение стресса:</strong> Задачи распределены равномерно.</li>
+                <li><strong>Гарантия результата:</strong> Минимизация риска пропустить дедлайн.</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>Совет: Используйте календарь или приложения для визуализации этапов планирования.</p>
+            </div>
+            
+            <h2>Частые ошибки</h2>
+            <ul>
+                <li><strong>Нереалистичные сроки:</strong> Не переоценивайте свои возможности.</li>
+                <li><strong>Отсутствие гибкости:</strong> План может потребовать корректировки.</li>
+                <li><strong>Игнорирование мелких задач:</strong> Учитывайте даже небольшие шаги.</li>
+                <li><strong>Отсутствие контроля:</strong> Регулярно проверяйте выполнение этапов.</li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

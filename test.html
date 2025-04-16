@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dropbtn {
+    background-color: #F77F00;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    top: 25px;
+    right: 20px; /* Уменьшил отступ справа */
+}
+
+/* Смещение выпадающего списка влево на маленьких экранах */
+@media (max-width: 768px) {
+    .dropdown {
+        right: 10px; /* Еще меньше отступ на мобильных устройствах */
+    }
+    .dropdown-content {
+        right: 0; /* Выравнивание по правому краю */
+        left: auto; /* Отмена выравнивания по левому краю */
+    }
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #E9F5DB;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    right: 0; /* Выравнивание по правому краю */
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #F77F00;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #6D597A;
+    color: white;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.container h3 {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.container p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.container ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.container ul li {
+    margin-bottom: 10px;
+}
+
+/* Стили для Flexbox */
+.flex-container {
+    display: flex;
+    align-items: center; /* Выравнивание по центру по вертикали */
+    gap: 40px; /* Расстояние между картинкой и текстом */
+    margin-top: 20px;
+}
+
+.flex-container img {
+    max-width: 20%; /* Размер картинки */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.flex-container .text-content {
+    flex: 1; /* Текст занимает оставшееся пространство */
+}
+
+/* Стили для текста без картинок */
+.text-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Легкий фон для выделения */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #6D597A;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+
+@media screen and (max-width: 980px) {
+    #glazd {
+        position:absolute;
+        top:10px;
+        right:100px;
+        z-index: 99999;
+        width:50px;
+    }
+}
+@media screen and (min-width: 980px) {
+    #glazd {
+        position:absolute;
+        top:20px;
+        left:50px;
+        z-index: 99999;
+        width:50px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h2>Тайм-менеджмент</h2>
+</header>
+
+<div class="dropdown">
+    <button class="dropbtn">Меню</button>
+    <div class="dropdown-content">
+        <a href="knopka.html" style="background-color: bisque">Главная</a>
+        <a href="prioritets.html">Приоритеты и задачи</a>
+        <a href="zdorovie.html">Здоровье</a>
+        <a href="primeri.html">Примеры</a>
+        <a href="prepyatstvia.html">Препятствия</a>
+        <a href="Einhausen.html">Метод Эйзенхауэра</a>
+        <a href="pomidor.html">Метод "Помидора"</a>
+        <a href="twominutes.html">Метод "2 минуты"</a>
+        <a href="eighttwo.html">Правило 80/20</a>
+        <a href="todolist.html">Метод "Список дел"</a>
+        <a href="frog.html">Метод "Лягушки"</a>
+        <a href="aivi.html" >Метод Айви Ли</a>
+        <a href="slon.html">Метод «Съешьте слона»</a>
+        <a href="students.html">Для студентов</a>
+    </div>
+</div>
+
+<a  id="specialButton" href="#"><img src="https://lidrekon.ru/images/special.png" id='glazd' alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"  /></a>
+
+<main>
+    <div class="container">
+        <!-- Первая картинка с текстом -->
+        <div class="flex-container">
+            <img src="kartinki/img1.jpg" alt="Тайм-менеджмент">
+            <div class="text-content">
+                <p>Тайм-менеджмент — это процесс планирования и организации времени таким образом, чтобы максимально эффективно использовать его для достижения поставленных целей.</p>
+            </div>
+        </div>
+
+        <!-- Раздел "Определение тайм-менеджмента" -->
+        <div class="text-section">
+            <h3>Определение тайм-менеджмента</h3>
+            <p>Тайм-менеджмент — это систематический подход к организации времени с целью повышения эффективности выполнения задач и достижения целей. Он помогает людям расставлять приоритеты, избегать прокрастинации и находить баланс между работой и личной жизнью.</p>
+        </div>
+
+        <!-- Раздел "Основные принципы тайм-менеджмента" -->
+        <div class="text-section">
+            <h3>Основные принципы тайм-менеджмента</h3>
+            <ul>
+                <li><strong>Целеполагание</strong>: Определение краткосрочных и долгосрочных целей, которые вы хотите достичь.</li>
+                <li><strong>Приоритизация</strong>: Оценка важности и срочности задач для их правильного распределения по времени.</li>
+                <li><strong>Планирование</strong>: Создание расписания или плана действий для выполнения задач.</li>
+                <li><strong>Делегирование</strong>: Передача части задач другим людям, если это возможно и целесообразно.</li>
+                <li><strong>Отслеживание времени</strong>: Анализ того, как вы тратите свое время, чтобы выявить области для улучшения.</li>
+            </ul>
+        </div>
+
+        <!-- Раздел "Инструменты для тайм-менеджмента" -->
+        <div class="flex-container">
+            <div class="text-content">
+                <h3>Инструменты для тайм-менеджмента</h3>
+                <ul>
+                    <li><strong>Календарные приложения</strong>: Google Calendar, Microsoft Outlook.</li>
+                    <li><strong>Планировщики задач</strong>: Todoist, Trello, Asana.</li>
+                    <li><strong>Таймеры</strong>: Pomodoro Timer, Focus Booster.</li>
+                    <li><strong>Приложения для отслеживания времени</strong>: Toggl, Clockify.</li>
+                </ul>
+            </div>
+            <img src="kartinki/img12.jpg" alt="Инструменты тайм-менеджмента">
+        </div>
+    </div>
+</main>
+
+<footer>
+    <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
+    <script src="https://lidrekon.ru/slep/js/uhpv-hover-full.min.js"></script>
+    <p>&copy; 2023 Тайм-менеджмент. Все права защищены.</p>
+</footer>
+
+</body>
+</html>

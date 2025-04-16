@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правило 1-3-5</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; 
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; 
+            text-align: center; 
+            min-width: 140px; 
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #E9F5DB;
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: #F77F00;
+            color: white;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #6D597A;
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .method-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .method-img img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #F77F00;
+            margin: 20px 0;
+        }
+        .task-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .task-column {
+            width: 30%;
+            min-width: 250px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .task-column h3 {
+            text-align: center;
+            color: var(--primary-color);
+        }
+        @media (max-width: 768px) {
+            .dropdown {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .task-column {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Правило 1-3-5</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html" style="background-color: bisque">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="method-img">
+                <img src="https://img.icons8.com/color/96/000000/todo-list.png" alt="Правило 1-3-5">
+            </div>
+            
+            <p>Правило 1-3-5 — это простая, но эффективная система планирования дня, которая помогает сосредоточиться на самом важном и избежать перегрузки. Суть метода: выполнять <strong>1 крупную</strong>, <strong>3 средние</strong> и <strong>5 мелких</strong> задач ежедневно.</p>
+            
+            <h2>Как работает правило 1-3-5?</h2>
+            <ul>
+                <li><strong>1 крупная задача</strong> — важный проект или дело, требующее 2-4 часов концентрации</li>
+                <li><strong>3 средние задачи</strong> — дела средней важности, каждое занимает около 1 часа</li>
+                <li><strong>5 мелких задач</strong> — рутинные или быстрые дела (до 30 минут каждое)</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>Этот метод предотвращает "паралич выбора" и помогает реалистично оценивать свои силы, не перегружая день.</p>
+            </div>
+            
+            <h2>Как применять правило 1-3-5</h2>
+            <ol>
+                <li><strong>Составьте список всех задач</strong>
+                    <p>Выпишите всё, что нужно сделать, без сортировки.</p>
+                </li>
+                <li><strong>Классифицируйте задачи</strong>
+                    <p>Разделите их по категориям: крупные (требуют много времени и энергии), средние, мелкие.</p>
+                </li>
+                <li><strong>Выберите 1-3-5</strong>
+                    <p>Отберите по 1, 3 и 5 задач из каждой категории соответственно. Остальное — на другие дни.</p>
+                </li>
+                <li><strong>Расставьте приоритеты</strong>
+                    <p>Начните с крупной задачи, затем переходите к средним, завершите день мелкими.</p>
+                </li>
+                <li><strong>Анализируйте результаты</strong>
+                    <p>Вечером оцените, что получилось, и скорректируйте список на завтра.</p>
+                </li>
+            </ol>
+            
+            <div class="task-list">
+                <div class="task-column">
+                    <h3>1 Крупная задача</h3>
+                    <ul>
+                        <li>Написать главу диплома</li>
+                        <li>Разработать презентацию</li>
+                        <li>Провести стратегическое совещание</li>
+                    </ul>
+                </div>
+                <div class="task-column">
+                    <h3>3 Средние задачи</h3>
+                    <ul>
+                        <li>Ответить на важные письма</li>
+                        <li>Составить отчёт</li>
+                        <li>Провести тренировку</li>
+                    </ul>
+                </div>
+                <div class="task-column">
+                    <h3>5 Мелких задач</h3>
+                    <ul>
+                        <li>Записаться к врачу</li>
+                        <li>Оплатить счета</li>
+                        <li>Купить продукты</li>
+                        <li>Позвонить родителям</li>
+                        <li>Заказать канцтовары</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2>Преимущества метода</h2>
+            <ul>
+                <li><strong>Баланс нагрузки</strong> — сочетание задач разного масштаба</li>
+                <li><strong>Реалистичность</strong> — учитываются ограниченные ресурсы времени</li>
+                <li><strong>Гибкость</strong> — можно адаптировать под любой график</li>
+                <li><strong>Наглядность</strong> — чёткая структура дня</li>
+                <li><strong>Прогресс</strong> — видимые результаты к концу дня</li>
+            </ul>
+            
+            <h2>Примеры использования</h2>
+            <ul>
+                <li><strong>Для студентов</strong>: 1 лекция + 3 задания + 5 организационных дел</li>
+                <li><strong>Для фрилансеров</strong>: 1 проект + 3 рабочих задачи + 5 административных дел</li>
+                <li><strong>Для родителей</strong>: 1 важное семейное дело + 3 домашних задачи + 5 бытовых мелочей</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>Совет: Если крупная задача слишком объёмная, разбейте её на части и выполняйте как серию средних задач в течение недели.</p>
+            </div>
+            
+            <h2>Частые ошибки</h2>
+            <ul>
+                <li><strong>Переоценка сил</strong> — выбор слишком сложной "1 задачи"</li>
+                <li><strong>Неучёт внешних обстоятельств</strong> — непредвиденные дела могут нарушить план</li>
+                <li><strong>Жёсткость</strong> — иногда нужно менять порядок выполнения</li>
+                <li><strong>Игнорирование мелких задач</strong> — они могут накапливаться</li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метод Ленивого гения</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; 
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; 
+            text-align: center; 
+            min-width: 140px; 
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #E9F5DB;
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }ы
+        .dropdown-content a:hover {
+            background-color: #F77F00;
+            color: white;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #6D597A;
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .method-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .method-img img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #F77F00;
+            margin: 20px 0;
+        }
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .principle-card {
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .principle-card h3 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+            .dropdown {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Метод Ленивого гения</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html" style="background-color: bisque">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="method-img">
+                <img src="https://img.icons8.com/color/96/000000/lazy.png" alt="Ленивый гений">
+            </div>
+            
+            <p>Метод "Ленивого гения" — это философия продуктивности, разработанная Кейт Нортруп, которая фокусируется на эффективности, а не на загруженности. Основная идея: делать меньше, но лучше, используя умные стратегии вместо слепого трудоголизма.</p>
+            
+            <h2>7 принципов ленивого гения</h2>
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <h3>Решайте один раз</h3>
+                    <p>Принимайте решение один раз для повторяющихся ситуаций (например, униформа для работы)</p>
+                </div>
+                <div class="principle-card">
+                    <h3>Начинайте с малого</h3>
+                    <p>Разбивайте большие задачи на микрошаги (правило 2 минут)</p>
+                </div>
+                <div class="principle-card">
+                    <h3>Спрашивайте "Зачем?"</h3>
+                    <p>Прежде чем браться за дело, определите его истинную цель</p>
+                </div>
+                <div class="principle-card">
+                    <h3>Создавайте системы</h3>
+                    <p>Автоматизируйте рутину, чтобы не тратить силы на однотипные решения</p>
+                </div>
+                <div class="principle-card">
+                    <h3>Используйте таймер</h3>
+                    <p>Устанавливайте чёткие временные границы для задач</p>
+                </div>
+                <div class="principle-card">
+                    <h3>Делегируйте</h3>
+                    <p>Отдавайте задачи, которые могут сделать другие</p>
+                </div>
+                <div class="principle-card">
+                    <h3>Заботьтесь о себе</h3>
+                    <p>Энергия важнее времени — восстанавливайте силы</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <p>Ленивый гений — не тот, кто ничего не делает, а тот, кто достигает максимума результатов с минимумом усилий.</p>
+            </div>
+            
+            <h2>Как применять метод</h2>
+            <ol>
+                <li><strong>Определите свои приоритеты</strong>
+                    <p>Выберите 3-4 главные сферы, на которых стоит сосредоточиться.</p>
+                </li>
+                <li><strong>Упрощайте всё</strong>
+                    <p>Ищите способы делать те же вещи проще и быстрее.</p>
+                </li>
+                <li><strong>Создавайте шаблоны</strong>
+                    <p>Для повторяющихся задач разработайте стандартные решения.</p>
+                </li>
+                <li><strong>Используйте "ленивые" инструменты</strong>
+                    <p>Автоматизация, делегирование, готовые решения.</p>
+                </li>
+                <li><strong>Оценивайте по результатам</strong>
+                    <p>Важно не сколько вы сделали, а какой эффект получили.</p>
+                </li>
+            </ol>
+            
+            <h2>Примеры из жизни</h2>
+            <ul>
+                <li><strong>Для работы</strong>: Автоматические шаблоны писем, чек-листы повторяющихся процессов</li>
+                <li><strong>Для дома</strong>: Еженедельное меню, система хранения вещей</li>
+                <li><strong>Для учёбы</strong>: Готовые структуры конспектов, флеш-карточки</li>
+                <li><strong>Для здоровья</strong>: Подготовка спортивной формы с вечера, готовые наборы полезных перекусов</li>
+            </ul>
+            
+            <h2>Преимущества метода</h2>
+            <ul>
+                <li><strong>Больше результатов</strong> — фокус на эффективности</li>
+                <li><strong>Меньше стресса</strong> — нет гонки за количеством</li>
+                <li><strong>Свободное время</strong> — для действительно важного</li>
+                <li><strong>Устойчивость</strong> — система работает без вашего постоянного участия</li>
+                <li><strong>Радость</strong> — вы делаете то, что важно, а не то, что срочно</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>Совет: Каждый раз, когда вы делаете что-то в третий раз, спросите себя: "Как можно автоматизировать или упростить этот процесс?"</p>
+            </div>
+            
+            <h2>Частые ошибки</h2>
+            <ul>
+                <li><strong>Путаница с ленью</strong> — метод требует дисциплины для создания систем</li>
+                <li><strong>Чрезмерная оптимизация</strong> — иногда проще сделать, чем оптимизировать</li>
+                <li><strong>Игнорирование контекста</strong> — не все задачи поддаются упрощению</li>
+                <li><strong>Отсутствие баланса</strong> — важно находить время для отдыха</li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

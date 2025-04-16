@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метод "Список дел"</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+            text-align: center;
+            min-width: 140px;
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .header-buttons {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Метод "Список дел"</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html" style="background-color: bisque">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="intro-section">
+                <h2>Основные принципы метода "Список дел"</h2>
+                <ul>
+                    <li><strong>Организация:</strong> Позволяет структурировать задачи и видеть общую картину.</li>
+                    <li><strong>Фокусировка:</strong> Позволяет сосредоточиться на том, что действительно важно, уменьшая вероятность отвлечений.</li>
+                    <li><strong>Увеличение продуктивности:</strong> Завершение задач и их отметка в списке создает чувство достижения и мотивации.</li>
+                    <li><strong>Снижение стресса:</strong> Записывание задач помогает освободить разум от постоянного беспокойства о том, что нужно сделать.</li>
+                    <li><strong>Гибкость:</strong> Метод легко адаптируется к изменениям и может быть использован в любых сферах жизни.</li>
+                </ul>
+            </section>
+            <section class="section">
+                <h3 class="section-title">Как применять метод "Список дел"</h3>
+                <div class="content-box">
+                    <h3 class="subsection-title">1. Составление списка</h3>
+                    <ul>
+                        <li>Запишите все задачи, которые необходимо выполнить. Это может быть сделано на бумаге, в текстовом документе или с помощью специализированных приложений.</li>
+                        <li>Включите как большие задачи (например, завершение проекта), так и мелкие (например, покупка продуктов).</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3 class="subsection-title">2. Приоритизация задач</h3>
+                    <ul>
+                        <li>Определите приоритет каждой задачи. Это можно сделать с помощью различных методов, таких как правило 80/20 или матрица Эйзенхауэра.</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3 class="subsection-title">3. Установка сроков</h3>
+                    <ul>
+                        <li>Назначьте реалистичные сроки для выполнения каждой задачи.</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3 class="subsection-title">4. Декомпозиция задач</h3>
+                    <ul>
+                        <li>Если задача большая или сложная, разбейте её на более мелкие подзадачи. Это сделает её менее устрашающей и позволит легче отслеживать прогресс.</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3 class="subsection-title">5. Регулярное обновление списка</h3>
+                    <ul>
+                        <li>Пересматривайте и обновляйте свой список дел ежедневно или еженедельно. Удаляйте выполненные задачи и добавляйте новые.</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3 class="subsection-title">6. Использование технологий</h3>
+                    <ul>
+                        <li>Воспользуйтесь приложениями для управления задачами, такими как Todoist, Trello или Asana, чтобы автоматизировать процесс отслеживания.</li>
+                    </ul>
+                </div>
+            </section>
+            <div class="highlight">
+                <p><strong>Совет:</strong> Для максимальной эффективности комбинируйте метод "Списка дел" с другими техниками тайм-менеджмента, такими как метод "Помидора" для фокусировки или правило 80/20 для приоритизации.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

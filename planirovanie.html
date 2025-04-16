@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Недельное планирование | Система «The Sunday Review»</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; 
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; 
+            text-align: center; 
+            min-width: 140px; 
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .calendar-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .calendar-img img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+        .highlight {
+            background-color: var(--highlight-color);
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .dropdown {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Недельное планирование</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html" style="background-color: bisque">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calendar-img">
+                <img src="https://img.icons8.com/color/96/000000/calendar.png" alt="Календарь">
+            </div>
+            
+            <p>Система «The Sunday Review» — это метод недельного планирования, который помогает эффективно распределить время и ресурсы на предстоящую неделю. Основная идея заключается в том, чтобы выделить время в воскресенье для анализа прошедшей недели и планирования следующей.</p>
+            
+            <h2>Основные принципы системы «The Sunday Review»</h2>
+            <ul>
+                <li><strong>Регулярность:</strong> Проводите обзор каждое воскресенье в одно и то же время.</li>
+                <li><strong>Анализ:</strong> Рассматривайте достижения и неудачи прошедшей недели.</li>
+                <li><strong>Планирование:</strong> Устанавливайте цели и приоритеты на следующую неделю.</li>
+                <li><strong>Фокус:</strong> Концентрируйтесь на важных задачах и стратегических целях.</li>
+                <li><strong>Гибкость:</strong> Корректируйте планы в зависимости от изменений.</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>«The Sunday Review» помогает начинать каждую неделю с чёткого понимания того, что нужно сделать, и как это повлияет на ваши долгосрочные цели.</p>
+            </div>
+            
+            <h2>Как применять систему «The Sunday Review»</h2>
+            <ol>
+                <li><strong>Обзор прошедшей недели</strong>
+                    <p>Проанализируйте, какие задачи были выполнены, а какие остались незавершёнными. Ответьте на вопросы: Что сработало? Что можно улучшить?</p>
+                </li>
+                <li><strong>Оценка прогресса</strong>
+                    <p>Проверьте, насколько вы продвинулись к своим долгосрочным целям. Оцените свои успехи и определите области для роста.</p>
+                </li>
+                <li><strong>Планирование задач на неделю</strong>
+                    <p>Запишите основные задачи на предстоящую неделю. Расставьте приоритеты и установите сроки выполнения.</p>
+                </li>
+                <li><strong>Распределение времени</strong>
+                    <p>Разделите задачи по дням недели. Убедитесь, что у вас есть баланс между работой, личной жизнью и отдыхом.</p>
+                </li>
+                <li><strong>Подготовка к действию</strong>
+                    <p>Подготовьте всё необходимое для выполнения задач: документы, инструменты, материалы.</p>
+                </li>
+            </ol>
+            
+            <h2>Примеры использования системы</h2>
+            <ul>
+                <li><strong>Для студентов:</strong> Планирование учебных занятий, проектов и экзаменов.</li>
+                <li><strong>Для работников:</strong> Распределение рабочих задач и совещаний.</li>
+                <li><strong>Для предпринимателей:</strong> Формирование стратегических целей и бизнес-планов.</li>
+                <li><strong>Для всех:</strong> Баланс между работой, хобби и личными делами.</li>
+            </ul>
+            
+            <h2>Преимущества системы</h2>
+            <ul>
+                <li><strong>Улучшение продуктивности:</strong> Четкий план помогает сосредоточиться на важных задачах.</li>
+                <li><strong>Снижение стресса:</strong> Заранее спланированные дела уменьшают беспокойство.</li>
+                <li><strong>Развитие осознанности:</strong> Регулярный анализ помогает лучше понимать свои цели.</li>
+                <li><strong>Баланс жизни:</strong> Включение времени для отдыха и личных интересов.</li>
+                <li><strong>Гибкость:</strong> Возможность адаптировать планы под изменения.</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>Совет: Используйте бумажный ежедневник или цифровые приложения (например, Notion, Google Calendar) для фиксации задач и отслеживания прогресса.</p>
+            </div>
+            
+            <h2>Частые ошибки</h2>
+            <ul>
+                <li><strong>Отсутствие регулярности:</strong> Пропуск обзора снижает эффективность системы.</li>
+                <li><strong>Перегрузка задачами:</strong> Неделя может стать слишком загруженной, если не расставить приоритеты.</li>
+                <li><strong>Игнорирование анализа:</strong> Без оценки прошедшей недели трудно учиться на ошибках.</li>
+                <li><strong>Жесткость плана:</strong> Отсутствие гибкости может привести к стрессу при изменениях.</li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

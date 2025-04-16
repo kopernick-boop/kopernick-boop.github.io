@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приоритеты и задачи | Тайм-менеджмент</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; /* Установлен одинаковый padding */
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; /* Предотвращает перенос текста на новую строку */
+            text-align: center; /* Выравнивание текста по центру */
+            min-width: 140px; /* Минимальная ширина для обеих кнопок */
+        }
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-bg);
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .intro-text {
+            text-align: center;
+            font-size: 18px;
+            margin: 30px auto;
+            max-width: 800px;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            color: var(--primary-color);
+            margin-left: 20px;
+            font-size: 24px;
+        }
+        .subsection-title {
+            color: var(--secondary-color);
+            text-align: center;
+            margin: 20px 0;
+            font-size: 20px;
+            text-decoration: underline;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .card {
+            flex: 1 1 200px;
+            max-width: 220px;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .card-title {
+            color: var(--primary-color);
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .double-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .double-card {
+            flex: 1 1 400px;
+            max-width: 500px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .double-card img {
+            max-width: 40%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .text-content {
+            flex: 1;
+        }
+        .text-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .text-box {
+            flex: 1 1 400px;
+            max-width: 500px;
+            padding: 20px;
+            font-size: 18px;
+        }
+        .final-text {
+            text-align: center;
+            font-size: 18px;
+            margin: 50px auto;
+            max-width: 800px;
+        }
+        @media (max-width: 768px) {
+            .header-buttons {
+                right: 10px;
+            }
+            .card {
+                flex: 1 1 100%;
+                max-width: 300px;
+            }
+            .double-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .double-card img {
+                max-width: 80%;
+            }
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Приоритеты и задачи</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html" style="background-color: bisque">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html" >Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="intro-text">
+                <p>Приоритеты и цели играют ключевую роль в тайм-менеджменте, поскольку помогают организовать время и ресурсы для достижения желаемых результатов. Вот как можно эффективно работать с приоритетами и целями:</p>
+            </div>
+            <section class="section">
+                <h2 class="section-title">1. Установка целей</h2>
+                <h3 class="subsection-title">SMART-метод:</h3>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="kartinki/s.jpg" alt="Конкретность">
+                        <h3 class="card-title">Specific</h3>
+                        <p>Цели должны быть четкими и понятными</p>
+                    </div>
+                    <div class="card">
+                        <img src="kartinki/M.jpg" alt="Измеримость">
+                        <h3 class="card-title">Measurable</h3>
+                        <p>Должны быть критерии для оценки результатов</p>
+                    </div>
+                    <div class="card">
+                        <img src="kartinki/A.jpg" alt="Достижимость">
+                        <h3 class="card-title">Achievable</h3>
+                        <p>Задача должна быть реалистичной</p>
+                    </div>
+                    <div class="card">
+                        <img src="kartinki/R.jpg" alt="Релевантность">
+                        <h3 class="card-title">Relevant</h3>
+                        <p>Должна соответствовать общим целям</p>
+                    </div>
+                    <div class="card">
+                        <img src="kartinki/T.png" alt="Ограниченность по времени">
+                        <h3 class="card-title">Time-bound</h3>
+                        <p>Должна иметь срок завершения</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">2. Разработка плана действий</h2>
+                <div class="double-card-container">
+                    <div class="double-card">
+                        <img src="kartinki/celi.png" alt="Декомпозиция целей">
+                        <div class="text-content">
+                            <p>Декомпозиция целей: разбейте большие цели на более мелкие, управляемые задачи. Это делает их менее пугающими и более достижимыми.</p>
+                        </div>
+                    </div>
+                    <div class="double-card">
+                        <img src="kartinki/plan.png" alt="Составление расписания">
+                        <div class="text-content">
+                            <p>Составление расписания: выделите время в своем календаре для работы над приоритетными задачами.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">3. Регулярная переоценка</h2>
+                <div class="text-container">
+                    <div class="text-box">
+                        <p>Еженедельный обзор: проводите регулярные проверки своих целей и задач, чтобы убедиться, что вы на правильном пути. Корректируйте планы при необходимости.</p>
+                    </div>
+                    <div class="text-box">
+                        <p>Гибкость: будьте готовы адаптировать свои приоритеты в зависимости от изменений в жизни или работе.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">4. Использование технологий</h2>
+                <div class="double-card-container">
+                    <div class="double-card">
+                        <img src="kartinki/pril.png" alt="Приложения для управления задачами">
+                        <div class="text-content">
+                            <p>Приложения для управления задачами: используйте инструменты, такие как Todoist, Trello или Asana, чтобы отслеживать задачи и устанавливать приоритеты.</p>
+                        </div>
+                    </div>
+                    <div class="double-card">
+                        <img src="kartinki/skrin.png" alt="Календарь">
+                        <div class="text-content">
+                            <p>Календарь: используйте цифровые календари для планирования времени на выполнение задач и встреч.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">5. Баланс между работой и личной жизнью</h2>
+                <div class="final-text">
+                    <p>Учитывайте личные цели и интересы наряду с профессиональными. Это поможет избежать выгорания и повысить общую удовлетворенность жизнью.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правило 80/20 (Принцип Парето)</title>
+    <style>
+        :root {
+            --primary-color: #6D597A;
+            --secondary-color: #F77F00;
+            --light-bg: #E9F5DB;
+            --highlight-color: #FFF8E1;
+            --text-color: #333;
+            --white: #fff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .header-buttons {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        .dropbtn, .home-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 20px; 
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap; 
+            text-align: center; 
+            min-width: 140px; 
+        }
+        
+        .dropbtn:hover, .home-btn:hover {
+            background-color: #3e8e41;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #E9F5DB;
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            right: 0;
+        }
+        .dropdown-content a {
+            font-size: 14px;
+            color: var(--text-color);
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: #F77F00;
+            color: white;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #6D597A;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #F77F00;
+            margin-top: 25px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .pareto-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .pareto-img img {
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        .highlight {
+            background-color: #FFF8E1;
+            padding: 15px;
+            border-left: 4px solid #F77F00;
+            margin: 20px 0;
+        }
+        .steps {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .example {
+            background-color: #E9F5DB;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .dropdown-content a {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+            .header-buttons {
+                right: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .pareto-img img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Правило 80/20 (Принцип Парето)</h1>
+        <div class="header-buttons">
+            <a href="knopka.html" class="home-btn">На главную</a>
+            <div class="dropdown">
+                <button class="dropbtn">Меню</button>
+                <div class="dropdown-content">
+                    <a href="knopka.html">Главная</a>
+                    <a href="prioritets.html">Приоритеты и задачи</a>
+                    <a href="zdorovie.html">Здоровье</a>
+                    <a href="primeri.html">Примеры</a>
+                    <a href="prepyatstvia.html">Препятствия</a>
+                    <a href="Einhausen.html">Метод Эйзенхауэра</a>
+                    <a href="pomidor.html">Метод "Помидора"</a>
+                    <a href="twominutes.html">Метод "2 минуты"</a>
+                    <a href="eighttwo.html" style="background-color: bisque">Правило 80/20</a>
+                    <a href="todolist.html">Метод "Список дел"</a>
+                    <a href="frog.html">Метод "Лягушки"</a>
+                    <a href="aivi.html">Метод Айви Ли</a>
+                    <a href="slon.html">Метод «Съешьте слона»</a>
+                    <a href="anti.html">Метод «Антирасписание»</a>
+                    <a href="auto.html">Автоматизация</a>
+                    <a href="chrono.html">Хронометраж</a>
+                    <a href="inbox.html">Inbox Zero</a>
+                    <a href="lazy.html">Ленивый гений</a>
+                    <a href="min.html">Цифровой минимализм</a>
+                    <a href="morning.html">Метод «Утренних страниц»</a>
+                    <a href="planirovanie.html">Система «The Sunday Review»</a>
+                    <a href="praim.html">Техника «Биологического прайм-тайма»</a>
+                    <a href="reverse.html">Техника «Обратного планирования»</a>
+                    <a href="rule135.html">Правило 1-3-5</a>
+                    <a href="steik.html">Бифштекс-метод</a>
+                    <a href="students.html">Для студентов</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <p>Правило 80/20, также известное как принцип Парето — это мощный инструмент тайм-менеджмента и анализа эффективности, который утверждает, что 80% результатов происходят от 20% усилий. Этот принцип был назван в честь итальянского экономиста Вильфредо Парето, который в 1897 году заметил, что 80% земель в Италии принадлежат 20% населения.</p>
+            <h2>Основные принципы правила 80/20</h2>
+            <ul>
+                <li><strong>Неравномерное распределение</strong> — большинство результатов в жизни распределены неравномерно</li>
+                <li><strong>Критически важное меньшинство</strong> — небольшая часть действий дает непропорционально большой эффект</li>
+                <li><strong>Универсальность</strong> — принцип применим в бизнесе, экономике, личной эффективности и других сферах</li>
+                <li><strong>Гибкость соотношений</strong> — точные цифры могут варьироваться (70/30, 90/10), но суть остается</li>
+            </ul>
+            <div class="highlight">
+                <p>Суть принципа: Определите те 20% ваших действий, которые приносят 80% результатов, и сосредоточьтесь на них.</p>
+            </div>
+            <h2>Как применять принцип Парето</h2>
+            <div class="steps">
+                <ol>
+                    <li><strong>Анализ текущей ситуации</strong>
+                        <p>Составьте список всех ваших задач/клиентов/продуктов и оцените их вклад в общий результат.</p>
+                    </li>
+                    <li><strong>Выявление ключевых 20%</strong>
+                        <p>Определите, какие действия дают наибольшую отдачу. Это могут быть:</p>
+                        <ul>
+                            <li>Наиболее прибыльные клиенты</li>
+                            <li>Самые эффективные каналы продаж</li>
+                            <li>Наиболее важные ежедневные задачи</li>
+                        </ul>
+                    </li>
+                    <li><strong>Оптимизация ресурсов</strong>
+                        <p>Перераспределите время и силы, уделяя больше внимания ключевым 20%.</p>
+                    </li>
+                    <li><strong>Сокращение неэффективных 80%</strong>
+                        <p>Уменьшите или устраните малопродуктивные занятия.</p>
+                    </li>
+                    <li><strong>Регулярный пересмотр</strong>
+                        <p>Проводите анализ каждые 3-6 месяцев, так как соотношение может меняться.</p>
+                    </li>
+                </ol>
+            </div>
+            <h2>Примеры применения</h2>
+            <div class="example">
+                <p><strong>В бизнесе:</strong></p>
+                <ul>
+                    <li>20% клиентов приносят 80% прибыли</li>
+                    <li>20% продуктов обеспечивают 80% продаж</li>
+                    <li>20% сотрудников создают 80% результатов</li>
+                </ul>
+                <p><strong>В личной эффективности:</strong></p>
+                <ul>
+                    <li>20% навыков дают 80% профессионального успеха</li>
+                    <li>20% привычек определяют 80% здоровья</li>
+                    <li>20% людей приносят 80% счастья</li>
+                </ul>
+                <p><strong>В тайм-менеджменте:</strong></p>
+                <ul>
+                    <li>20% задач приводят к 80% достижений</li>
+                    <li>20% времени дня наиболее продуктивны</li>
+                    <li>20% знаний дают 80% понимания темы</li>
+                </ul>
+            </div>
+            <h2>Преимущества метода</h2>
+            <ul>
+                <li><strong>Повышение продуктивности</strong> — фокус на действительно важном</li>
+                <li><strong>Экономия времени</strong> — устранение малополезных занятий</li>
+                <li><strong>Увеличение доходов</strong> — концентрация на самых прибыльных направлениях</li>
+                <li><strong>Снижение стресса</strong> — меньше хаоса, больше осознанности</li>
+                <li><strong>Улучшение качества жизни</strong> — больше времени на важное</li>
+            </ul>
+            <h2>Ограничения и предостережения</h2>
+            <ul>
+                <li><strong>Не абсолютная истина</strong> — соотношение может быть другим (70/30, 90/10)</li>
+                <li><strong>Нельзя игнорировать остальные 80% полностью</strong> — некоторые вещи важны в долгосрочной перспективе</li>
+                <li><strong>Требует регулярного пересмотра</strong> — ключевые 20% могут меняться со временем</li>
+                <li><strong>Не заменяет системный подход</strong> — лучше использовать в комплексе с другими методами</li>
+            </ul>
+            <div class="highlight">
+                <p>Совет: Начните с анализа одной сферы жизни (например, рабочего времени). Задайте себе: "Какие 20% моих действий дают 80% результатов в этой области?"</p>
+            </div>
+            <h2>Инструменты для анализа</h2>
+            <ul>
+                <li><strong>ABC-анализ</strong> — классификация задач/клиентов по важности</li>
+                <li><strong>Диаграмма Парето</strong> — визуализация вклада различных факторов</li>
+                <li><strong>Трекеры времени</strong> (Toggl, RescueTime) — для выявления самых продуктивных периодов</li>
+                <li><strong>Анализ продаж</strong> — определение самых прибыльных товаров/услуг</li>
+                <li><strong>Журнал продуктивности</strong> — запись и оценка результатов работы</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Тайм-менеджмент. Все права защищены. Trakimus Corporation.</p>
+    </footer>
+</body>
+</html>
